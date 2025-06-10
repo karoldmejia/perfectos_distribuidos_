@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+
+group 'com.ejemplo'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation name: 'ice-3.7.10'
+}
+
+task compileSlice(type: Exec) {
+    description = "Compila los archivos .ice a Java"
+    commandLine 'slice2java', 'src/main/slice/Perfectos.ice', '--output-dir', 'src/main/java'
+}
+
+application {
+    mainClassName = 'client.Launcher'
+}
