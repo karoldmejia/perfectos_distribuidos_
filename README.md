@@ -1,7 +1,6 @@
 # Proyecto de distribuidos – Cliente, Workers y Master
 
-Este proyecto está configurado para funcionar **exclusivamente en Windows PowerShell**.  
-Asegúrate de estar utilizando **PowerShell (no CMD ni Git Bash)** al ejecutar los scripts.
+Los scripts de automatización están configurados para funcionar **exclusivamente en Windows PowerShell**.  
 
 ---
 
