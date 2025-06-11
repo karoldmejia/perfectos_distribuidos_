@@ -22,7 +22,7 @@ Esto compilará las clases Java necesarias y generará los archivos `.class` en 
 
 ## Ejecución
 
-Una vez compilado, puedes ejecutar el sistema completo (cliente + master + workers) con:
+Una vez compilado, se puede ejecutar el sistema completo (cliente + master + workers) con:
 
 ```powershell
 .\run.ps1 -numeroWorkers 2 -rangoInicio 1 -rangoFin 30000
@@ -57,7 +57,7 @@ for (int i = 0; i < 2; i++) {
 }
 ```
 
-Si cambias el número de workers en `run.ps1`, **también debes modificar este valor (`i < ...`) en el código Java** para que coincida.
+Si se cambia el número de workers en `run.ps1`, **también se debe modificar este valor (`i < ...`) en el código Java** para que coincida.
 Por defecto está en `2`.
 
 ---
