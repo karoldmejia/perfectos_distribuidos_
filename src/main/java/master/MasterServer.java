@@ -23,7 +23,7 @@ public class MasterServer {
             // Crear proxies a los Workers remotos
             List<WorkerPrx> workers = new ArrayList<>();
 
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 2; i++) {
                 int port = 10003 + i; // puertos: 10003, 10004, 10005, 10006, 10007
                 String proxyString = "worker" + i + ":default -h 127.0.0.1 -p " + port;
                 WorkerPrx workerProxy = WorkerPrx.checkedCast(communicator.stringToProxy(proxyString));

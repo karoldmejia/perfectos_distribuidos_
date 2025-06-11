@@ -17,40 +17,42 @@ package Perfectos;
 
 public interface ClientPrx extends com.zeroc.Ice.ObjectPrx
 {
-    default void mostrarResultado(long[] perfectos, String idTarea)
+    default void mostrarResultado(long[] perfectos, String idTarea, long tiempoEjecucion)
     {
-        mostrarResultado(perfectos, idTarea, com.zeroc.Ice.ObjectPrx.noExplicitContext);
+        mostrarResultado(perfectos, idTarea, tiempoEjecucion, com.zeroc.Ice.ObjectPrx.noExplicitContext);
     }
 
-    default void mostrarResultado(long[] perfectos, String idTarea, java.util.Map<String, String> context)
+    default void mostrarResultado(long[] perfectos, String idTarea, long tiempoEjecucion, java.util.Map<String, String> context)
     {
-        _iceI_mostrarResultadoAsync(perfectos, idTarea, context, true).waitForResponse();
+        _iceI_mostrarResultadoAsync(perfectos, idTarea, tiempoEjecucion, context, true).waitForResponse();
     }
 
-    default java.util.concurrent.CompletableFuture<Void> mostrarResultadoAsync(long[] perfectos, String idTarea)
+    default java.util.concurrent.CompletableFuture<Void> mostrarResultadoAsync(long[] perfectos, String idTarea, long tiempoEjecucion)
     {
-        return _iceI_mostrarResultadoAsync(perfectos, idTarea, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
+        return _iceI_mostrarResultadoAsync(perfectos, idTarea, tiempoEjecucion, com.zeroc.Ice.ObjectPrx.noExplicitContext, false);
     }
 
-    default java.util.concurrent.CompletableFuture<Void> mostrarResultadoAsync(long[] perfectos, String idTarea, java.util.Map<String, String> context)
+    default java.util.concurrent.CompletableFuture<Void> mostrarResultadoAsync(long[] perfectos, String idTarea, long tiempoEjecucion, java.util.Map<String, String> context)
     {
-        return _iceI_mostrarResultadoAsync(perfectos, idTarea, context, false);
+        return _iceI_mostrarResultadoAsync(perfectos, idTarea, tiempoEjecucion, context, false);
     }
 
     /**
      * @hidden
      * @param iceP_perfectos -
      * @param iceP_idTarea -
+     * @param iceP_tiempoEjecucion -
      * @param context -
      * @param sync -
      * @return -
      **/
-    default com.zeroc.IceInternal.OutgoingAsync<Void> _iceI_mostrarResultadoAsync(long[] iceP_perfectos, String iceP_idTarea, java.util.Map<String, String> context, boolean sync)
+    default com.zeroc.IceInternal.OutgoingAsync<Void> _iceI_mostrarResultadoAsync(long[] iceP_perfectos, String iceP_idTarea, long iceP_tiempoEjecucion, java.util.Map<String, String> context, boolean sync)
     {
         com.zeroc.IceInternal.OutgoingAsync<Void> f = new com.zeroc.IceInternal.OutgoingAsync<>(this, "mostrarResultado", null, sync, null);
         f.invoke(false, context, null, ostr -> {
                      ostr.writeLongSeq(iceP_perfectos);
                      ostr.writeString(iceP_idTarea);
+                     ostr.writeLong(iceP_tiempoEjecucion);
                  }, null);
         return f;
     }

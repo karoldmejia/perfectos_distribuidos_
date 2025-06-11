@@ -12,14 +12,21 @@ public class WorkerI implements Worker {
     }
 
     private boolean esPerfecto(long num) {
-        long suma = 0;
-        for (long i = 1; i <= num / 2; i++) {
+        if (num <= 1) return false;
+
+        long suma = 1;
+        for (long i = 2; i <= Math.sqrt(num); i++) {
             if (num % i == 0) {
                 suma += i;
+                long complemento = num / i;
+                if (complemento != i) {
+                    suma += complemento;
+                }
             }
         }
         return suma == num;
     }
+
 
     @Override
     public long[] buscarPerfectos(long inicio, long fin, String idTarea, Current current) {

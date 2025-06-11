@@ -16,6 +16,6 @@ module Perfectos {
     };
 
     interface Client {
-        void mostrarResultado(ListaPerfectos perfectos, string idTarea);
+        void mostrarResultado(ListaPerfectos perfectos, string idTarea, long tiempoEjecucion);
     };
 };

@@ -17,7 +17,7 @@ package Perfectos;
 
 public interface Client extends com.zeroc.Ice.Object
 {
-    void mostrarResultado(long[] perfectos, String idTarea, com.zeroc.Ice.Current current);
+    void mostrarResultado(long[] perfectos, String idTarea, long tiempoEjecucion, com.zeroc.Ice.Current current);
 
     /** @hidden */
     static final String[] _iceIds =
@@ -56,10 +56,12 @@ public interface Client extends com.zeroc.Ice.Object
         com.zeroc.Ice.InputStream istr = inS.startReadParams();
         long[] iceP_perfectos;
         String iceP_idTarea;
+        long iceP_tiempoEjecucion;
         iceP_perfectos = istr.readLongSeq();
         iceP_idTarea = istr.readString();
+        iceP_tiempoEjecucion = istr.readLong();
         inS.endReadParams();
-        obj.mostrarResultado(iceP_perfectos, iceP_idTarea, current);
+        obj.mostrarResultado(iceP_perfectos, iceP_idTarea, iceP_tiempoEjecucion, current);
         return inS.setResult(inS.writeEmptyParams());
     }
 
