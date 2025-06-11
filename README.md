@@ -1,3 +1,5 @@
+Integrantes: Johan Guzmán y Karold Mejia
+
 # Proyecto de distribuidos – Cliente, Workers y Master
 
 Los scripts de automatización están configurados para funcionar **exclusivamente en Windows PowerShell**.  
